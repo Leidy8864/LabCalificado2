@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ddd"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activities.DetailActvity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/android_card_view_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="80dp"
+                android:layout_height="64dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="51dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_launcher_background"
+                tools:ignore="VectorDrawableCompat" />
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:layout_toStartOf="@+id/logo_image"
+                android:text="Nombres de la empresa"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_text"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="38dp"
+                android:layout_toStartOf="@+id/logo_image"
+                android:paddingTop="5dp"
+                android:text="Direccion"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/phone_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address_text"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="38dp"
+                android:layout_toStartOf="@+id/logo_image"
+                android:text="(01) 999-999-9"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/category_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="38dp"
+                android:layout_below="@+id/phone_text"
+                android:layout_toStartOf="@+id/logo_image"
+                android:text="Categoria"
+                android:textSize="16sp" />
+
+            <RatingBar
+                android:id="@+id/MyRating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/logo_image"
+                android:layout_alignTop="@+id/phone_text"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/url_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/logo_image"
+                android:layout_alignTop="@+id/category_text"
+                android:text="Url"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/uno"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/myborder"
+        android:gravity="center"
+        android:text="Información"
+        android:textColor="@color/cardview_light_background"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Info"
+            android:gravity="center"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/android_card_view_example1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:drawableTop="@drawable/ic_browser"
+                android:gravity="center|bottom"
+                android:paddingBottom="8dp"
+                android:text="WEBSITE"
+                android:textSize="6dp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/button1"
+                android:drawableTop="@drawable/ic_gmail"
+                android:gravity="center|bottom"
+                android:paddingBottom="10dp"
+                android:text="E-MAIL"
+                android:textSize="6dp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/button2"
+                android:drawableTop="@drawable/ic_sms"
+                android:gravity="center|bottom"
+                android:paddingBottom="10dp"
+                android:text="SMS"
+                android:textSize="6dp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignTop="@+id/button1"
+                android:layout_toEndOf="@+id/button3"
+                android:drawableTop="@drawable/ic_share"
+                android:gravity="center|bottom"
+                android:paddingBottom="10dp"
+                android:text="COMPARTIR"
+                android:textSize="6dp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/button4"
+                android:drawableTop="@drawable/ic_mobile_phone"
+                android:gravity="center|bottom"
+                android:paddingBottom="10dp"
+                android:text="TELEFONO"
+                android:textSize="8dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
