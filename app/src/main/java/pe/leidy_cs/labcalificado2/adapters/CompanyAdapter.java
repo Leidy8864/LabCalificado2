@@ -6,10 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,15 +31,14 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
         this.companies = companies;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView categoryText;
         TextView nameText;
         TextView addressText;
         TextView phoneText;
-        TextView emailText;
-        TextView urlText;
         ImageView logoImage;
         LinearLayout view_container;
+        ImageButton imageButton;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -48,9 +47,22 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
             nameText        = itemView.findViewById(R.id.name_text);
             addressText     = itemView.findViewById(R.id.address_text);
             phoneText       = itemView.findViewById(R.id.phone_text);
-            emailText       = itemView.findViewById(R.id.email_text);
-            urlText         = itemView.findViewById(R.id.url_text);
             logoImage       = itemView.findViewById(R.id.logo_image);
+            imageButton     = itemView.findViewById(R.id.imageButton);
+
+            /**itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(mContext, DetailActvity.class);
+                    i.putExtra("name_text", companies.get(viewHolder.getAdapterPosition()).getName());
+                    mContext.startActivity(i);
+                    Toast.makeText(mContext, "Index position is: "+viewType, Toast.LENGTH_SHORT).show();
+
+                    int position = getAdapterPosition();
+                    Log.d(LOGCAT,"La psoicion********************---****-***********************************"+position);
+
+                }
+            });**/
         }
     }
 
@@ -59,36 +71,41 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_company, parent, false);
         final ViewHolder viewHolder = new ViewHolder(itemView);
 
-        /**viewHolder.view_container.setOnClickListener(new View.OnClickListener(){
+        viewHolder.imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
              public void onClick(View v){
                  Intent i = new Intent(mContext, DetailActvity.class);
-                 i.putExtra("name_text", companies.get(viewHolder.getAdapterPosition()).getName());
+                 i.putExtra("name_text"     , companies.get(viewHolder.getAdapterPosition()).getName());
+                 i.putExtra("category_text", companies.get(viewHolder.getAdapterPosition()).getCategory());
+                 i.putExtra("address_text", companies.get(viewHolder.getAdapterPosition()).getAddress());
+                 i.putExtra("phone_text", companies.get(viewHolder.getAdapterPosition()).getPhone());
+                 i.putExtra("email_text", companies.get(viewHolder.getAdapterPosition()).getEmail());
+                 i.putExtra("url_text", companies.get(viewHolder.getAdapterPosition()).getUrl());
+                 i.putExtra("logo_image", companies.get(viewHolder.getAdapterPosition()).getLogo());
+                 i.putExtra("info", companies.get(viewHolder.getAdapterPosition()).getInfo());
+
                  mContext.startActivity(i);
-                Toast.makeText(mContext, "Index position is: "+viewType, Toast.LENGTH_SHORT).show();
-                 }
-             });**/
+                }
+            });
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Company company = this.companies.get(position);
         viewHolder.categoryText.setText(company.getCategory());
         viewHolder.nameText.setText(company.getName());
         viewHolder.addressText.setText(company.getAddress());
         viewHolder.phoneText.setText(company.getPhone());
-        viewHolder.emailText.setText(company.getEmail());
-        viewHolder.urlText.setText(company.getUrl());
 
         Context context = viewHolder.itemView.getContext();
         int idRes = context.getResources().getIdentifier(company.getLogo(), "drawable", context.getPackageName());
         viewHolder.logoImage.setImageResource(idRes);
-
     }
 
     @Override
     public int getItemCount() {
         return this.companies.size();
     }
+
 }

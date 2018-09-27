@@ -21,7 +21,7 @@ public class SearchResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
 
-        companiesList = (RecyclerView)findViewById(R.id.companies_list);
+        companiesList = findViewById(R.id.companies_list);
         companiesList.setLayoutManager(new LinearLayoutManager(this));
 
         CompanyAdapter adapter = new CompanyAdapter();
@@ -29,5 +29,6 @@ public class SearchResultActivity extends AppCompatActivity {
         List<Company> companies = CompanyRepository.getCompanies();
         adapter.setCompanies(companies, this);
         companiesList.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 }

@@ -21,7 +21,7 @@
         android:layout_height="35dp"
         android:background="@drawable/myborder2"
         android:gravity="center"
-        android:layout_toRightOf="@+id/uno"
+        android:layout_toRightOf="@id/uno"
         android:text="Items Relacionados"
         android:textColor="@color/icons"/>
 
