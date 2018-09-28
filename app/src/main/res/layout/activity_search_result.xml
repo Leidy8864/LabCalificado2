@@ -8,7 +8,19 @@
     tools:context=".activities.SearchResultActivity">
 
     <TextView
+        android:id="@+id/textDato"
+        android:layout_width="412dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/myborder3"
+        android:gravity="center"
+        android:text="Dato"
+        android:textColor="@color/divider" />
+
+    <TextView
         android:id="@+id/uno"
+        android:layout_marginTop="40dp"
         android:layout_width="112dp"
         android:layout_height="35dp"
         android:background="@drawable/myborder"
@@ -19,15 +31,16 @@
     <TextView
         android:layout_width="112dp"
         android:layout_height="35dp"
+        android:layout_alignTop="@+id/uno"
+        android:layout_toEndOf="@+id/uno"
         android:background="@drawable/myborder2"
         android:gravity="center"
-        android:layout_toRightOf="@id/uno"
         android:text="Items Relacionados"
-        android:textColor="@color/icons"/>
+        android:textColor="@color/icons" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/companies_list"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="75dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

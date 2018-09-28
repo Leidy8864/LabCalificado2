@@ -28,8 +28,6 @@ public class DetailActvity extends AppCompatActivity {
         String address = getIntent().getExtras().getString("address_text");
         String category = getIntent().getExtras().getString("category_text");
         String phone = getIntent().getExtras().getString("phone_text");
-        String email = getIntent().getExtras().getString("email_text");
-        String url = getIntent().getExtras().getString("url_text");
         String info = getIntent().getExtras().getString("info");
         String logo = getIntent().getExtras().getString("logo_image");
 
@@ -37,8 +35,6 @@ public class DetailActvity extends AppCompatActivity {
         TextView tv_address = findViewById(R.id.address_text);
         TextView tv_category = findViewById(R.id.category_text);
         TextView tv_phone = findViewById(R.id.phone_text);
-        TextView tv_email = findViewById(R.id.email_text);
-        TextView tv_url = findViewById(R.id.url_text);
         TextView tv_info = findViewById(R.id.info);
         ImageView tv_logo = findViewById(R.id.logo_image);
 
@@ -46,13 +42,12 @@ public class DetailActvity extends AppCompatActivity {
         tv_address.setText(address);
         tv_category.setText(category);
         tv_phone.setText(phone);
-        tv_email.setText(email);
-        tv_url.setText(url);
         tv_info.setText(info);
 
         Context context = this;
         int idRes = context.getResources().getIdentifier(logo, "drawable", context.getPackageName());
         tv_logo.setImageResource(idRes);
+
     }
 
     public void BtnSetCall_onClick(View view){

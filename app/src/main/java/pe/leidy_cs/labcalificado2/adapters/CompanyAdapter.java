@@ -49,20 +49,6 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
             phoneText       = itemView.findViewById(R.id.phone_text);
             logoImage       = itemView.findViewById(R.id.logo_image);
             imageButton     = itemView.findViewById(R.id.imageButton);
-
-            /**itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(mContext, DetailActvity.class);
-                    i.putExtra("name_text", companies.get(viewHolder.getAdapterPosition()).getName());
-                    mContext.startActivity(i);
-                    Toast.makeText(mContext, "Index position is: "+viewType, Toast.LENGTH_SHORT).show();
-
-                    int position = getAdapterPosition();
-                    Log.d(LOGCAT,"La psoicion********************---****-***********************************"+position);
-
-                }
-            });**/
         }
     }
 
@@ -107,5 +93,4 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
     public int getItemCount() {
         return this.companies.size();
     }
-
 }
